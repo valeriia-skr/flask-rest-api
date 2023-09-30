@@ -8,7 +8,6 @@ class PlainItemSchema(Schema):
     price = fields.Float(required=True)
     
 
-
 class PlainStoreSchema(Schema):
     id = fields.Int(dump_only=True)
     name  = fields.Str()

@@ -1,5 +1,4 @@
-import os 
-import secrets 
+import os
 import redis
 
 from flask import Flask, jsonify
@@ -39,6 +38,12 @@ def create_app(db_url=None):
     db.init_app(app)
     migrate = Migrate(app, db)
     api = Api(app)
+    
+    """
+    in terminal we can generate a secret key using:
+    import secrets
+    secrets.SystemRandom().getrandbits(128)
+    """
     
 
     app.config["JWT_SECRET_KEY"] = "243299004584699923248887643653137392531"
